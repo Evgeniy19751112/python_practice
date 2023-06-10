@@ -8,6 +8,18 @@ practical work. This repository was created for easy access to the completed
 works.
 
 
+# final__python_basics_part_1
+
+В каталоге final__python_basics_part_1 финальная работа по окончани курса 
+"Основы Python. Часть 1". Требовалось доработать имеющееся у заказчика 
+консольное приложение. Техническое задание прилагается.
+
+In the catalog final__python_basics_part_1 the final work at the end of the 
+course "Fundamentals of Python. Part 1". It was necessary to finalize the 
+console application available to the customer. The technical specification 
+is attached.
+
+
 # task_voting_service
 
 В каталоге task_voting_service практическая №1. Требовалось разработать 
