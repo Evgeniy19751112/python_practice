@@ -173,3 +173,5 @@ cython_debug/
 *.rar
 *.bak
 test.txt
+*.doc
+*.docx
