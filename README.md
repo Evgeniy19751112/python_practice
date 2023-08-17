@@ -10,7 +10,7 @@ works.
 
 # final__python_basics_part_1
 
-В каталоге final__python_basics_part_1 финальная работа по окончани курса 
+В каталоге final__python_basics_part_1 финальная работа по окончанию курса 
 "Основы Python. Часть 1". Требовалось доработать имеющееся у заказчика 
 консольное приложение. Техническое задание прилагается.
 
@@ -18,6 +18,20 @@ In the catalog final__python_basics_part_1 the final work at the end of the
 course "Fundamentals of Python. Part 1". It was necessary to finalize the 
 console application available to the customer. The technical specification 
 is attached.
+
+
+# final__python_basics_part_2
+
+В каталоге final__python_basics_part_2 финальная работа по окончанию курса
+"Основы Python. Часть 2". Требовалось написать телеграм-бот в связке со 
+сторонним сайтом (был предложен Кинопоиск) и используюя базу данных для 
+хранения истории и других сведений (например, ORM peewee).
+
+In the catalog final__python_basics_part_2, the final work on the completion 
+of the course "Python Basics. Part 2". It was required to write a telegram 
+bot in conjunction with a third-party site (Kinopoisk was proposed) and 
+using a database for storing history and other information (for example, 
+peewee's ORM).
 
 
 # task_voting_service
