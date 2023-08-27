@@ -175,3 +175,4 @@ cython_debug/
 test.txt
 *.doc
 *.docx
+.add_materials/
