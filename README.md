@@ -47,3 +47,15 @@ develop a system and service for collecting and processing votes on cars. At
 this stage, our service has been created in the form of a console application 
 that implements the functionality of both the administrator and the user. The 
 business task and the terms of reference are attached.
+
+
+# task_kinopoisk_api
+
+В каталоге task_kinopoisk_api практическая №2. Требовалось разработать парсер, 
+который будет собирать информацию о фильмах, актёрах, режиссёрах с сайта 
+«Кинопоиск». Бизнес-задача и техническое задание прилагаются.
+
+In the task_kinopoisk_api directory, practical no.2. It was necessary to 
+develop a parser that would collect information about films, actors, directors 
+from the Kinopoisk website. The business task and the terms of reference are 
+attached.
