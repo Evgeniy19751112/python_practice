@@ -59,3 +59,14 @@ In the task_kinopoisk_api directory, practical no.2. It was necessary to
 develop a parser that would collect information about films, actors, directors 
 from the Kinopoisk website. The business task and the terms of reference are 
 attached.
+
+# final__python_advanced
+
+В каталоге final__python_advanced финальная работа по окончанию курса
+"Python Advanced". Требовалось реализация бэкенда корпоративного сервиса
+микроблогов. Техническое задание прилагается.
+
+The final__python_advanced catalog contains the final work at the end
+of the Python Advanced course. It required the implementation of a corporate service backend
+microblogging. The terms of reference are attached.
+
