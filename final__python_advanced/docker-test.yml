@@ -1,0 +1,56 @@
+version: '3.7'
+
+services:
+
+  postgres_test:
+    image: postgres:16.3-alpine3.20
+    hostname: host_db
+    container_name: test_pgsql
+    env_file:
+        - .env_test_db
+    environment:
+      PGDATA: "/var/lib/postgresql/data"
+    command:
+      - "postgres"
+      - "-c"
+      - "config_file=/etc/postgresql.conf"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgresql.conf:/etc/postgresql.conf:ro
+      - ./initdb_test:/docker-entrypoint-initdb.d:ro
+      - type: bind
+        source: ${PWD}/db_test
+        target: /var/lib/postgresql/data
+        read_only: false
+      - type: bind
+        source: ${PWD}/logs/postgres_test
+        target: /var/log/postgresql
+        read_only: false
+    networks:
+      - test_network
+#    restart: no
+
+#  server-app_test:
+#    image: python:3.10.11-slim
+#    hostname: host_app
+#    container_name: test_app
+#    build:
+#      context: ./
+#      dockerfile: tests/Dockerfile
+#    env_file:
+#        - .env_test
+#    environment:
+#      - APP_IMAGES_PATH=/tmp/images
+#    expose:
+#      - "8000"
+#    stop_signal: SIGKILL
+#    depends_on:
+#      - postgres_test
+#    networks:
+#      - test_network
+##    restart: no
+
+networks:
+    test_network:
+        driver: bridge

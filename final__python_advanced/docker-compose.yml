@@ -1,0 +1,80 @@
+version: '3.7'
+
+services:
+
+  postgres:
+    image: postgres:16.3-alpine3.20
+    hostname: host_db
+    container_name: postgres
+    env_file:
+        - .env_prod_db
+    environment:
+      PGDATA: "/var/lib/postgresql/data"
+    command:
+      - "postgres"
+      - "-c"
+      - "config_file=/etc/postgresql.conf"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgresql.conf:/etc/postgresql.conf:ro
+      - ./initdb_prod:/docker-entrypoint-initdb.d:ro
+      - type: bind
+        source: ${PWD}/db
+        target: /var/lib/postgresql/data
+        read_only: false
+      - type: bind
+        source: ${PWD}/logs/postgresql
+        target: /var/log/postgresql
+        read_only: false
+    networks:
+      - app_network
+    restart: unless-stopped
+
+  server-app:
+    image: python:3.10.11-slim
+    hostname: host_app
+    container_name: server_app
+    build:
+      context: server_app/
+      dockerfile: Dockerfile
+    env_file:
+        - .env
+    environment:
+      - APP_IMAGE_PATH=/usr/share/images
+      - APP_DEBUG=false
+    expose:
+      - "8000"
+    stop_signal: SIGKILL
+    depends_on:
+      - postgres
+    volumes:
+      - ${PWD}/server_app:/usr/share/server_app:ro
+      - ${PWD}/server_nginx/static/images:/usr/share/images:rw
+      - ${PWD}/logs/app:/var/log/app:rw
+    networks:
+      - app_network
+    restart: on-failure
+
+  server-nginx:
+    image: nginx:1.27
+    container_name: server_nginx
+    hostname: host_nginx
+    build:
+      context: server_nginx/
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ${PWD}/logs/nginx:/var/log/nginx:rw
+      - ${PWD}/server_nginx/static:/usr/share/nginx/html:ro
+    stop_signal: SIGKILL
+    depends_on:
+      - server-app
+    networks:
+      - app_network
+    restart: on-failure
+
+networks:
+    app_network:
+        driver: bridge

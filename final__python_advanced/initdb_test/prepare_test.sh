@@ -1,0 +1,14 @@
+#!/bin/bash
+set -e
+
+if psql -U "$POSTGRES_USER" -tAc "SELECT 1 FROM pg_user WHERE usename='$TEST_USER';" | grep -q 1; then
+  echo "No needed create test role"
+  exit 0
+fi
+
+psql -v ON_ERROR_STOP=0 -U "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOSQL
+    CREATE USER $TEST_USER WITH PASSWORD 'TEST_USER_PASSWORD';
+    CREATE DATABASE $POSTGRES_DB;
+    GRANT ALL PRIVILEGES ON DATABASE $POSTGRES_DB TO $TEST_USER;
+    ALTER USER $TEST_USER WITH SUPERUSER;
+EOSQL
