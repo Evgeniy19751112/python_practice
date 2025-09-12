@@ -1,0 +1,17 @@
+{
+    "title": "Smartphone X",
+    "price": 500.67,
+    "count": 10,
+    "description": "Latest smartphone model",
+    "fullDescription": "The Smartphone X features a 6.5-inch display, 128GB storage, and triple camera system.",
+    "freeDelivery": true,
+    "rating": 4.7,
+    "category": {
+        "title": "Electronics"
+    },
+    "tags": [
+        {
+            "name": "Popular"
+        }
+    ]
+}

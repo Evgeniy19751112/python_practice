@@ -1,0 +1,12 @@
+{
+    "createdAt": "2023-05-15 15:00:00",
+    "fullName": "Annoying Orange",
+    "email": "john.doe@example.com",
+    "phone": "1234567890",
+    "deliveryType": "express",
+    "paymentType": "card",
+    "totalCost": 100.00,
+    "status": "processing",
+    "city": "New York",
+    "address": "123 Main St"
+}

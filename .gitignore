@@ -57,6 +57,7 @@ cover/
 
 # Django stuff:
 *.log
+*.log.*
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
@@ -177,3 +178,11 @@ test.txt
 *.doc
 *.docx
 .add_materials/
+
+# Do not upload copies of static files to GIT
+static/admin/
+static/frontend/
+uploads/app/users/
+uploads/app/imagesproduct/
+uploads/app/imagescategories/
+uploads/app/imagessale/

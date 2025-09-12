@@ -1,0 +1,23 @@
+{
+    "id": 123,
+    "category": 55,
+    "price": "500.67",
+    "count": 12,
+    "title": "video card",
+    "description": "description of the product",
+    "fullDescription": "full description of the product",
+    "freeDelivery": true,
+    "images": [{"src": "/media/app/images/product/3.png", "alt": "Image alt string"}],
+    "tags": ["Gaming"],
+    "reviews": [
+        {
+            "author": "Annoying Orange",
+            "email": "no-reply@mail.ru",
+            "text": "rewrewrwerewrwerwerewrwerwer",
+            "rate": 4,
+            "date": "2023-05-05 12:12"
+        }
+    ],
+    "specifications": [{"name": "Size", "value": "XL"}],
+    "rating": 4.6
+}

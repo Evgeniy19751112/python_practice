@@ -70,3 +70,12 @@ The final__python_advanced catalog contains the final work at the end
 of the Python Advanced course. It required the implementation of a corporate service backend
 microblogging. The terms of reference are attached.
 
+# final__python_django
+
+В каталоге final__python_django финальная работа по окончанию курса "Python Django".
+Требовалась разработка полнофункционального веб-приложения интернет-магазина
+на базе фреймворка Django с реализацией REST API для взаимодействия с клиентской частью.
+
+The final__python_django catalog contains the final work after completing the Python Django course.
+It required the development of a fully functional web application of an online store
+based on the Django framework with the implementation of a REST API for interacting with the client side.
